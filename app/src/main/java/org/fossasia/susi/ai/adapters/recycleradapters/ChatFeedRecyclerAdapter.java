@@ -960,7 +960,7 @@ public class ChatFeedRecyclerAdapter extends SelectableAdapter implements Messag
             if(getSelectedItems().size()>0) {
                 Log.d(TAG, "onPrepareActionMode: size " + getSelectedItems().size());
                 for(int i = 0; i<getSelectedItems().size() ;i++ ){
-                    if(getItemViewType(getSelectedItems().get(i)) == 0 || getItemViewType(getSelectedItems().get(i)) == 1){
+                    if(getItemViewType(getSelectedItems().get(i)) == USER_MESSAGE || getItemViewType(getSelectedItems().get(i)) == SUSI_MESSAGE){
                         menu.clear();
                         mode.getMenuInflater().inflate(R.menu.menu_selection_mode, menu);
                         menu.removeItem(R.id.menu_item_unimportant);
