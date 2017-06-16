@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
             PrefManager.putBoolean("is_susi_server_selected", true);
         }
         email.setError(null);
-        
+
         logIn.setEnabled(false);
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -182,25 +182,25 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else if(response.code() == 422) {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                        builder.setTitle(R.string.password_invalid_title);
-                        builder.setMessage(R.string.password_invalid)
-                                .setCancelable(false)
-                                .setPositiveButton("OK", null);
-                        AlertDialog alert = builder.create();
-                        alert.show();
-                        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-                        pbutton.setTextColor(Color.BLUE);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                    builder.setTitle(R.string.password_invalid_title);
+                    builder.setMessage(R.string.password_invalid)
+                            .setCancelable(false)
+                            .setPositiveButton("OK", null);
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                    Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+                    pbutton.setTextColor(Color.BLUE);
                 } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                        builder.setTitle(response.code() + " Error");
-                        builder.setMessage(response.message())
-                                .setCancelable(false)
-                                .setPositiveButton("OK", null);
-                        AlertDialog alert = builder.create();
-                        alert.show();
-                        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-                        pbutton.setTextColor(Color.BLUE);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                    builder.setTitle(response.code() + " Error");
+                    builder.setMessage(response.message())
+                            .setCancelable(false)
+                            .setPositiveButton("OK", null);
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                    Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+                    pbutton.setTextColor(Color.BLUE);
                 }
                 logIn.setEnabled(true);
                 progressDialog.dismiss();
