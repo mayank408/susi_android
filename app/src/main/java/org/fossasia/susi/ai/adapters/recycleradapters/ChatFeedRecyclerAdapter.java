@@ -121,8 +121,6 @@ public class ChatFeedRecyclerAdapter extends SelectableAdapter implements Messag
     private SparseBooleanArray selectedItems;
     private AppCompatActivity currActivity;
     private Toast toast;
-    MenuItem share;
-    MenuItem copy;
     // For typing dots from Susi
     private TypingDotsHolder dotsHolder;
     private ZeroHeightHolder nullHolder;
@@ -940,7 +938,6 @@ public class ChatFeedRecyclerAdapter extends SelectableAdapter implements Messag
 
             MenuItem important = menu.findItem(R.id.menu_item_important);
             MenuItem unimportant = menu.findItem(R.id.menu_item_unimportant);
-            copy = menu.findItem(R.id.menu_item_copy);
 
             if(currContext instanceof ImportantMessages){
                 important.setVisible(false);
