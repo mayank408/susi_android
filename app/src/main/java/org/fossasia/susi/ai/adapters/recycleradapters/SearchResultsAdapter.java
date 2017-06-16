@@ -3,12 +3,9 @@ package org.fossasia.susi.ai.adapters.recycleradapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.view.ActionMode;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,7 +43,7 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultHolde
     }
 
     @Override
-    public void onBindViewHolder(final SearchResultHolder holder, final int position) {
+    public void onBindViewHolder(final SearchResultHolder holder, int position) {
         Datum datum = datumList.get(position);
         if (datum != null) {
             holder.titleTextView.setText(Html.fromHtml(datum.getTitle()));
@@ -89,8 +86,6 @@ public class SearchResultsAdapter extends RecyclerView.Adapter<SearchResultHolde
                                 }
                             }
                         });
-
-
 
                     }
                 };
